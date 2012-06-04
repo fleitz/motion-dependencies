@@ -1,0 +1,3 @@
+# depends bar.rb
+# depends foo.rb
+This is not a dependency

@@ -1,53 +1,19 @@
-# encoding: utf-8
+#!/usr/bin/env rake
+require "bundler/gem_tasks"
+require 'rspec/core/rake_task'
 
-require 'rubygems'
-require 'bundler'
-begin
-  Bundler.setup(:default, :development)
-rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
-  exit e.status_code
-end
-require 'rake'
+desc 'Default: run specs.'
+task :default => :spec
 
-require 'jeweler'
-Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "motion-dependencies"
-  gem.homepage = "http://github.com/fleitz/motion-dependencies"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "fred.leitz@gmail.com"
-  gem.authors = ["Fred Leitz"]
-  # dependencies defined in Gemfile
-end
-Jeweler::RubygemsDotOrgTasks.new
-
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
+desc "Run specs"
+RSpec::Core::RakeTask.new do |t|
+  t.pattern = "./spec/**/*_spec.rb" # don't need this, it's default.
+  # Put spec opts in a file named .rspec in root
 end
 
-#require 'rcov/rcovtask'
-#Rcov::RcovTask.new do |test|
-#  test.libs << 'test'
-#  test.pattern = 'test/**/test_*.rb'
-#  test.verbose = true
-#  test.rcov_opts << '--exclude "gems/*"'
-#end
-
-task :default => :test
-
-require 'rdoc/task'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "motion-dependencies #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+desc "Generate code coverage"
+RSpec::Core::RakeTask.new(:coverage) do |t|
+  t.pattern = "./spec/**/*_spec.rb" # don't need this, it's default.
+  t.rcov = true
+  t.rcov_opts = ['--exclude', 'spec']
 end

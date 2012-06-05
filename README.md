@@ -9,12 +9,18 @@
 Add this line to your application's Rakefile:
 
     require 'motion-dependencies'
+    Motion::Project::App.setup do |app|
+      app.files = Dir.glob('./app/lib/**/*.rb') | Dir.glob('./app/**/*.rb') 
+      app.files_dependencies = Motion::Dependencies.find_dependendcies(app.files)
+    end
 
 
 ## Usage
-
-    app.files = Dir.glob('./app/lib/**/*.rb') | Dir.glob('./app/**/*.rb') 
-    app.files_dependencies = Motion::Dependencies.find_dependendcies(app.files)
+    
+    # depends your-mixin.rb
+    class FooViewController < UIViewController
+      include YourMixin
+    end
 
 ## Contributing
 

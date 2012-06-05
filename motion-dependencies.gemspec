@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["fred.leitz@gmail.com"]
   gem.description   = %q{Rudimentary dependency support for Ruby Motion}
   gem.summary       = %q{Track dependencies for ruby motion with comments}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/fleitz/motion-dependencies"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

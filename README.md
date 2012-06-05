@@ -1,24 +1,20 @@
 # Motion::Dependencies
 
-TODO: Write a gem description
+
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'motion-dependencies'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install motion-dependencies
+
+Add this line to your application's Rakefile:
+
+    require 'motion-dependencies'
+
 
 ## Usage
 
-TODO: Write usage instructions here
+    app.files = Dir.glob('./app/lib/**/*.rb') | Dir.glob('./app/**/*.rb') 
+    app.files_dependencies = Motion::Dependencies.find_dependendcies(app.files)
 
 ## Contributing
 

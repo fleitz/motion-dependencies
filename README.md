@@ -5,13 +5,14 @@ your files
 
 ## Say goodbye to
 
-   app.files_dependencies { 'app/foo_controller.rb' => 'app/app_controller.rb', 'app/baz_controller.rb' => 'app/app_controller.rb' }
+    app.files_dependencies { 'app/foo_controller.rb' => 'app/app_controller.rb', 'app/baz_controller.rb' => 'app/app_controller.rb' }
 
 ## Say hello to
 
-   # depends app_controller.rb
-   class FooController < AppController
-   end
+    # depends app_controller.rb
+    class FooController < AppController
+    
+    end
 
 ## Installation
 

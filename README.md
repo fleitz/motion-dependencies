@@ -11,7 +11,7 @@ Add this line to your application's Rakefile:
     require 'motion-dependencies'
     Motion::Project::App.setup do |app|
       app.files = Dir.glob('./app/lib/**/*.rb') | Dir.glob('./app/**/*.rb') 
-      app.files_dependencies = Motion::Dependencies.find_dependendcies(app.files)
+      app.files_dependencies = Motion::Dependencies.find_dependencies(app.files)
     end
 
 

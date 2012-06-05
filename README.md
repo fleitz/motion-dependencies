@@ -9,7 +9,7 @@ your files
 ```ruby
 app.files_dependencies { 
   'app/foo_controller.rb' => 'app/app_controller.rb',
-   'app/baz_controller.rb' => 'app/app_controller.rb' 
+  'app/baz_controller.rb' => 'app/app_controller.rb' 
 }
 ```
 ## Say hello to

@@ -27,8 +27,8 @@ module Motion
       dependencies = {}
       files.each do |file|
         unresolved_dependencies = dependencies_for_file(file)
-        if(dependencies.length > 0)
-          dependencies[file] = resolve_depenendencies files, dependencies
+        if(unresolved_dependencies.length > 0)
+          dependencies[file] = resolve_dependencies files, unresolved_dependencies
         end
       end
       dependencies

@@ -35,12 +35,12 @@ Add this line to your application's Rakefile:
 
 ## Usage
     
-    ```ruby
-    # depends your-mixin.rb
-    class FooViewController < UIViewController
-      include YourMixin
-    end
-    ```
+```ruby
+# depends your-mixin.rb
+class FooViewController < UIViewController
+  include YourMixin
+end
+```
 
 ## Contributing
 

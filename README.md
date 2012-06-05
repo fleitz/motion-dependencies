@@ -1,4 +1,5 @@
-# Get rid of that ruby motion dependency hash.
+# Ruby Motion Dependencies
+## Stop updating that ruby motion dependency hash.
  
 Instead have dependencies built from
 your files

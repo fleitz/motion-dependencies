@@ -5,17 +5,20 @@ your files
 
 ## Say goodbye to
 
-    ```ruby
-    app.files_dependencies { 'app/foo_controller.rb' => 'app/app_controller.rb', 'app/baz_controller.rb' => 'app/app_controller.rb' }
-    ```
+```ruby
+app.files_dependencies { 
+  'app/foo_controller.rb' => 'app/app_controller.rb',
+   'app/baz_controller.rb' => 'app/app_controller.rb' 
+}
+```
 ## Say hello to
 
-    ```ruby
-    # depends app_controller.rb
-    class FooController < AppController
-    
-    end
-    ```
+```ruby
+# depends app_controller.rb
+class FooController < AppController
+
+end
+```
 
 
 ## Installation
@@ -24,13 +27,13 @@ your files
 
 Add this line to your application's Rakefile:
 
-    ```ruby
-    require 'motion-dependencies'
-    Motion::Project::App.setup do |app|
-      app.files = Dir.glob('./app/lib/**/*.rb') | Dir.glob('./app/**/*.rb') 
-      app.files_dependencies = Motion::Dependencies.find_dependencies(app.files)
-    end
-    ```
+```ruby
+require 'motion-dependencies'
+Motion::Project::App.setup do |app|
+  app.files = Dir.glob('./app/lib/**/*.rb') | Dir.glob('./app/**/*.rb') 
+  app.files_dependencies = Motion::Dependencies.find_dependencies(app.files)
+end
+```
 
 
 ## Usage

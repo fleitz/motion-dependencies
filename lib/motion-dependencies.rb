@@ -16,11 +16,12 @@ module Motion
     end
 
     def self.resolve_dependencies files, dependencies
-      files.select do |file|
+      files = files.select do |file|
         dependencies.select do |dependency|
           file.include? dependency
         end.length > 0
       end
+      files.uniq
     end
 
     def self.find_dependencies(files)
